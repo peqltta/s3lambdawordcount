@@ -11,7 +11,7 @@ def lambda_handler(event, context):
         response = s3.get_object(Bucket=bucket, Key=key)
         res = response['Body'].read()
         count = len(res.split())
-        MY_SNS_TOPIC_ARN = 'arn:aws:sns:us-west-2:821320601467:bucketcounter'
+        MY_SNS_TOPIC_ARN = 'SNS ARN GOES HERE'
         sns_client = boto3.client('sns')
         sns_client.publish(
         TopicArn = MY_SNS_TOPIC_ARN,
